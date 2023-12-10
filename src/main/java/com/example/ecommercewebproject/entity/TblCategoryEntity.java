@@ -19,14 +19,20 @@ public class TblCategoryEntity {
     @Column(name = "brand_id")
     private String brandId;
     @Basic
-    @Column(name = "des_cate")
-    private String desCate;
+    @Column(name = "description")
+    private String description;
     @Basic
     @Column(name = "update_date")
     private Timestamp updateDate;
     @Basic
     @Column(name = "create_date")
     private Timestamp createDate;
+    @Basic
+    @Column(name = "status")
+    private byte status;
+    @Basic
+    @Column(name = "product_type")
+    private String productType;
 
     public String getId() {
         return id;
@@ -52,12 +58,12 @@ public class TblCategoryEntity {
         this.brandId = brandId;
     }
 
-    public String getDesCate() {
-        return desCate;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDesCate(String desCate) {
-        this.desCate = desCate;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Timestamp getUpdateDate() {
@@ -76,16 +82,32 @@ public class TblCategoryEntity {
         this.createDate = createDate;
     }
 
+    public byte getStatus() {
+        return status;
+    }
+
+    public void setStatus(byte status) {
+        this.status = status;
+    }
+
+    public String getProductType() {
+        return productType;
+    }
+
+    public void setProductType(String productType) {
+        this.productType = productType;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         TblCategoryEntity that = (TblCategoryEntity) o;
-        return Objects.equals(id, that.id) && Objects.equals(categoryName, that.categoryName) && Objects.equals(brandId, that.brandId) && Objects.equals(desCate, that.desCate) && Objects.equals(updateDate, that.updateDate) && Objects.equals(createDate, that.createDate);
+        return status == that.status && Objects.equals(id, that.id) && Objects.equals(categoryName, that.categoryName) && Objects.equals(brandId, that.brandId) && Objects.equals(description, that.description) && Objects.equals(updateDate, that.updateDate) && Objects.equals(createDate, that.createDate) && Objects.equals(productType, that.productType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, categoryName, brandId, desCate, updateDate, createDate);
+        return Objects.hash(id, categoryName, brandId, description, updateDate, createDate, status, productType);
     }
 }
