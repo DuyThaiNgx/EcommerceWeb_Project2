@@ -47,7 +47,7 @@ public class AdminOrderController extends BaseController {
 		model.addAttribute("currentPages", p.orElse(0));
 		return "administrator/order";
 	}
-
+	//Hàm xử lý search hóa đơn theo số hóa đơn
 	@RequestMapping(value = ("/admin/order/{id}"), method = RequestMethod.POST)
 	public String searchOrder(final Model model, final HttpServletRequest request, final HttpServletResponse response,@PathVariable("id") int id)
 			throws IOException {

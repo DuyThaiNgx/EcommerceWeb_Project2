@@ -147,14 +147,22 @@
 					<h1 class="h3 mb-3">
 						<strong>Danh sách Hoá đơn</strong>
 					</h1>
-					<form action="${base }/admin/order" method="post">
-						<!-- tìm kiếm sản phẩm trên danh sách -->
-						<div class="d-flex flex-row justify-content-between mt-4">
-							<div class="d-flex flex-row">
-								<input id="page" name="id" class="form-control"
-									placeholder="Nhập số hoá đơn">
-								<button type="submit" id="btnSearch" name="btnSearch"
-									value="Search" class="btn btn-primary">Seach</button>
+<%--					<form action="${base }/admin/order" method="post">--%>
+<%--						<!-- tìm kiếm sản phẩm trên danh sách -->--%>
+<%--						<div class="d-flex flex-row justify-content-between mt-4">--%>
+<%--							<div class="d-flex flex-row">--%>
+<%--								<input id="page" name="id" class="form-control"--%>
+<%--									placeholder="Nhập số hoá đơn">--%>
+<%--								<button type="submit" id="btnSearch" name="btnSearch"--%>
+<%--									value="Search" class="btn btn-primary">Seach</button>--%>
+<%--							</div>--%>
+<%--						</div>--%>
+<%--					</form>--%>
+					<form action="${base}/admin/bill/search" method="get">
+						<div class="input-group mb-3">
+							<input type="text" class="form-control" placeholder="Vui lòng nhập số hóa đơn" name="id" id="billIdInput">
+							<div class="input-group-append">
+								<button class="btn btn-primary" type="submit" id="btnSearch">Search</button>
 							</div>
 						</div>
 					</form>
@@ -249,7 +257,20 @@
 	<script src="${base}/js/app.js"></script>
 	<script src="${base}/js/jquery-3.6.1.min.js"></script>
 	<script src="${base}/js/jquery.simplePagination.js"></script>
+	<!-- Trong file order.jsp -->
+	<script type="text/javascript">
+		$(document).ready(function () {
+			// Lắng nghe sự kiện khi nhấn nút Search
+			$("#btnSearch").on("click", function () {
+				// Lấy giá trị từ input và gán vào form action
+				var billId = $("#billIdInput").val();
+				var formAction = "${base}/admin/bill/search?id=" + billId;
 
+				// Gán giá trị mới cho action của form
+				$("form").attr("action", formAction);
+			});
+		});
+	</script>
 	<script type="text/javascript">
 		const dropdownItems = document.querySelectorAll('.dropdown-item');
 		const selectedOption = document.getElementById('selected-option');

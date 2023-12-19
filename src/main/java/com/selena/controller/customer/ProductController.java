@@ -36,22 +36,28 @@ public class ProductController extends BaseController {
 	@Autowired
 	private CategoryRepository categoryRepository;
 	
-	
+	/*
+	Hiển thị trang sản phẩm
+	 */
 	@RequestMapping(value={"/product"}, method = RequestMethod.GET)
 	public String product(final Model model,
 			final HttpServletRequest request,
 			final HttpServletResponse response,
 			@RequestParam("p") Optional<Integer> p) {
+		//Tạo đối tượng Pageable để sử dụng cho việc phân trang, mỗi trang sẽ chứa tối đa 8 sản phẩm.
 		Pageable pageable =PageRequest.of(p.orElse(0), 8);
 		Page<Product> page=productService.findAll(pageable);
 		List<Product> product=page.getContent();
+		//Thêm danh sách sản phẩm vào Model để có thể sử dụng trong View.
 		model.addAttribute("product", product);
 		model.addAttribute("totalPages", page.getTotalPages());
 		model.addAttribute("currentPages", p.orElse(0));
 		
 		return "customer/product";
 	}
-	
+	/*
+	Ấn vào sản phẩm thì hiển thị chi tiết SP
+	 */
 	@RequestMapping(value={"/product/{productID}"}, method = RequestMethod.GET)
 	public String productDesc(final Model model,
 			final HttpServletRequest request,
@@ -73,6 +79,9 @@ public class ProductController extends BaseController {
 
 		return "customer/productDesc";
 	}
+	/*
+	Sắp xếp giá product theo giá trị giảm dần
+	 */
 	@RequestMapping(value={"/product/viewDes"}, method = RequestMethod.GET)
 	public String sortProductDes(final Model model,
 			final HttpServletRequest request,
@@ -88,6 +97,9 @@ public class ProductController extends BaseController {
 		
 		return "customer/product";
 	}
+	/*
+	Sắp xếp giá product theo giá trị tăng dần
+	 */
 	@RequestMapping(value={"/product/viewAsc"}, method = RequestMethod.GET)
 	public String sortProductAsc(final Model model,
 			final HttpServletRequest request,
@@ -103,6 +115,9 @@ public class ProductController extends BaseController {
 		
 		return "customer/product";
 	}
+	/*
+	Sắp xếp sản phẩm theo tên chữ cái
+	 */
 	@RequestMapping(value={"/product/viewNameAsc"}, method = RequestMethod.GET)
 	public String sortByNameProductAsc(final Model model,
 			final HttpServletRequest request,
@@ -118,6 +133,9 @@ public class ProductController extends BaseController {
 		
 		return "customer/product";
 	}
+	/*
+	Category của sản phẩm
+	 */
 	@RequestMapping(value={"/product/cate/{id}"}, method = RequestMethod.GET)
 	public String getProductByCategory(final Model model,
 									   final HttpServletRequest request,
