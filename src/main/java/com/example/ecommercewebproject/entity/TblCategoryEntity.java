@@ -77,6 +77,7 @@ public class TblCategoryEntity {
     public Timestamp getCreateDate() {
         return createDate;
     }
+    public
 
     public void setCreateDate(Timestamp createDate) {
         this.createDate = createDate;
