@@ -6,7 +6,7 @@ import java.util.List;
 
 /**
  * biểu thị cho giỏ hàng
- * @author daing
+ * @author dtngx
  *
  */
 public class Cart {

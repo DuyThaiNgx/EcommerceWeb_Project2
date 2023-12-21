@@ -20,7 +20,7 @@ import org.springframework.security.web.authentication.AuthenticationSuccessHand
 /**
  * kiểm tra Role của User Logined. Nếu guest thì về trang người dùng
  * ngược lại nếu là Admin thì vào trang Admin
- * @author daing
+ * @author dtngx
  *
  */
 public class UrlAuthenticationSuccessHandler implements AuthenticationSuccessHandler {
@@ -50,6 +50,7 @@ public class UrlAuthenticationSuccessHandler implements AuthenticationSuccessHan
 	 */
 	protected String determineTargetUrl(final Authentication authentication) {
 		Map<String, String> roleTargetUrlMap = new HashMap<>();
+		// Là admin thì trả về trang admin, là người dùng thì trả về home
 		roleTargetUrlMap.put("ADMIN", "/admin/product/list");
 		roleTargetUrlMap.put("GUEST", "/home");
 

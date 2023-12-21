@@ -34,7 +34,9 @@ public class AdminBillController extends BaseController{
 
 	@Autowired
 	private SaleOrderProductRepository saleOrderProductRepository;
-	//Hiển thị chi tiết bill trong order nếu ấn check
+	/*
+	Hiển thị chi tiết bill trong order nếu ấn check
+	 */
 	@RequestMapping(value = ("/admin/bill/{id}"), method = RequestMethod.GET)
 	public String viewBill(final Model model, 
 			final HttpServletRequest request, 
@@ -70,11 +72,15 @@ public class AdminBillController extends BaseController{
 //			return "redirect:/error";
 //		}
 //	}
+	/*
+	Search bill theo mã hóa đơn
+	 */
 	@RequestMapping(value = "/admin/bill/search", method = RequestMethod.GET)
 	public String searchBill(@RequestParam("id") int id, Model model) throws IOException {
 		SaleOrder order = saleOrderService.searchOrder(id);
 
 		if (order != null) {
+			//Lấy dữ liệu từ DB
 			model.addAttribute("customerName", order.getCustomerName());
 			model.addAttribute("customerEmail", order.getCustomerEmail());
 			model.addAttribute("customerPhone", order.getCustomerPhone());

@@ -35,7 +35,7 @@
 	<main>
 		<div class="container" style="margin-top: 50px; margin-bottom: 50px">
 			<div class="content">
-				<h1 class="ok">Cảm ơn bạn đã mua hàng tại selena</h1>
+				<h1 class="ok">Cảm ơn bạn đã mua hàng tại Selena</h1>
 				<i class="fa-solid fa-check"></i>
 				<div class="form">
 					<a href="${base}/home"><button type="submit" class="btn-create">Done</button></a>

@@ -71,7 +71,7 @@ public class ProductService extends BaseService<Product> {
 	private boolean isEmptyUploadFile(MultipartFile image) {
 		return image == null || image.getOriginalFilename().isEmpty();
 	}
-
+	//Thêm 1 file ảnh với thời gian ở trong file upload
 	private String getUniqueUploadFileName(String fileName) {
 		String[] splitFileName = fileName.split("\\.");
 		return splitFileName[0] + System.currentTimeMillis() + "." + splitFileName[1];
@@ -121,6 +121,59 @@ public class ProductService extends BaseService<Product> {
 
 	}
 	
+//	@Transactional
+//	public Product updateProduct(Product p, MultipartFile productAvatar, MultipartFile[] productPictures)
+//			throws IllegalStateException, IOException {
+//
+//		// lấy thông tin cũ của product theo id đang có trong database
+//		Product productInDb = super.getById(p.getId());
+//
+//		// có đẩy avartar ??? => xóa avatar cũ đi và thêm avatar mới
+//		if (!isEmptyUploadFile(productAvatar)) {
+//			// xóa avatar cũ trong folder
+//			new File("C:/upload/" + productInDb.getAvatar()).delete();
+//
+//			// update avatar mới
+//			String fileName = getUniqueUploadFileName(productAvatar.getOriginalFilename());
+//			productAvatar.transferTo(new File("C:/upload/product/avatar/" + fileName));
+//			p.setAvatar("product/avatar/" + fileName);
+//		} else {
+//			// sử dụng lại avartar cũ
+//			p.setAvatar(productInDb.getAvatar());
+//		}
+//
+//		// có đẩy pictures ???
+//		if (!isEmptyUploadFile(productPictures)) {
+//
+//			// xóa pictures cũ
+//			if (productInDb.getProductImages() != null && productInDb.getProductImages().size() > 0) {
+//				for (ProductImages opi : productInDb.getProductImages()) {
+//					// xóa avatar trong folder lên
+//					new File("C:/upload/" + opi.getPath()).delete();
+//
+//					// xóa dữ liệu của image cho sản phẩm đang sửa trong database
+//					productImagesService.delete(opi);
+//				}
+//			}
+//
+//			// update pictures mới
+//			for (MultipartFile pic : productPictures) {
+//				String fileName = getUniqueUploadFileName(pic.getOriginalFilename());
+//
+//				pic.transferTo(new File("C:/upload/product/pictures/" + fileName));
+//
+//				ProductImages pi = new ProductImages();
+//				pi.setPath("product/pictures/" + fileName);
+//				pi.setTitle(fileName);
+//				p.addProductImages(pi);
+//			}
+//		}
+//		// lưu vào database
+//		return super.saveOrUpdate(p);
+//	}
+
+
+
 	@Transactional
 	public Product updateProduct(Product p, MultipartFile productAvatar, MultipartFile[] productPictures)
 			throws IllegalStateException, IOException {
@@ -129,48 +182,47 @@ public class ProductService extends BaseService<Product> {
 		Product productInDb = super.getById(p.getId());
 
 		// có đẩy avartar ??? => xóa avatar cũ đi và thêm avatar mới
-		if (!isEmptyUploadFile(productAvatar)) {
-			// xóa avatar cũ trong folder
-			new File("C:/upload/" + productInDb.getAvatar()).delete();
+		if(productInDb!=null){
+			if (!isEmptyUploadFile(productAvatar)) {
+				// xóa avatar cũ trong folder
+				new File("C:/upload/" + productInDb.getAvatar()).delete();
 
-			// update avatar mới
-			String fileName = getUniqueUploadFileName(productAvatar.getOriginalFilename());
-			productAvatar.transferTo(new File("C:/upload/product/avatar/" + fileName));
-			p.setAvatar("product/avatar/" + fileName);
-		} else {
-			// sử dụng lại avartar cũ
-			p.setAvatar(productInDb.getAvatar());
-		}
-
-		// có đẩy pictures ???
-		if (!isEmptyUploadFile(productPictures)) {
-
-			// xóa pictures cũ
-			if (productInDb.getProductImages() != null && productInDb.getProductImages().size() > 0) {
-				for (ProductImages opi : productInDb.getProductImages()) {
-					// xóa avatar trong folder lên
-					new File("C:/upload/" + opi.getPath()).delete();
-
-					// xóa dữ liệu của image cho sản phẩm đang sửa trong database
-					productImagesService.delete(opi);
-				}
+				// update avatar mới
+				String fileName = getUniqueUploadFileName(productAvatar.getOriginalFilename());
+				productAvatar.transferTo(new File("C:/upload/product/avatar/" + fileName));
+				p.setAvatar("product/avatar/" + fileName);
+			} else {
+				// sử dụng lại avartar cũ
+				p.setAvatar(productInDb.getAvatar());
 			}
 
-			// update pictures mới
+			// có đẩy pictures ???
+			if (!isEmptyUploadFile(productPictures)) {
+
+				// xóa pictures cũ
+				if (productInDb.getProductImages() != null && productInDb.getProductImages().size() > 0) {
+					for (ProductImages opi : productInDb.getProductImages()) {
+						// xóa avatar trong folder lên
+						new File("C:/upload/" + opi.getPath()).delete();
+
+						// xóa dữ liệu của image cho sản phẩm đang sửa trong database
+						productImagesService.delete(opi);
+					}
+				}
+
+				// update pictures mới
 			for (MultipartFile pic : productPictures) {
 				String fileName = getUniqueUploadFileName(pic.getOriginalFilename());
-				
+
 				pic.transferTo(new File("C:/upload/product/pictures/" + fileName));
-				
+
 				ProductImages pi = new ProductImages();
 				pi.setPath("product/pictures/" + fileName);
 				pi.setTitle(fileName);
 				p.addProductImages(pi);
 			}
+			}
 		}
-
-		
-		
 		// lưu vào database
 		return super.saveOrUpdate(p);
 	}

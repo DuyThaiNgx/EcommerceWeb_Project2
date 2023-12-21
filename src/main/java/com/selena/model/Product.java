@@ -1,6 +1,7 @@
 package com.selena.model;
 
 import java.math.BigDecimal;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -16,11 +17,12 @@ import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.xml.crypto.Data;
 
 @Entity
 @Table(name = "tbl_products")
 public class Product extends BaseEntity {
-	
+
 
 	@Column(name = "title", length = 1000, nullable = false)
 	private String title;
@@ -39,13 +41,26 @@ public class Product extends BaseEntity {
 	private String details;
 
 	@Column(name = "avatar", nullable = true)
-	private String avatar;	
-	
+	private String avatar;
+
 	@Column(name = "seo", length = 1000, nullable = true)
 	private String seo;
 
 	@Column(name = "is_hot", nullable = true)
 	private Boolean isHot = Boolean.FALSE;
+
+	@Column(name = "created_date", nullable = true)
+	private Date createdDate;
+
+	@Override
+	public Date getCreatedDate() {
+		return createdDate;
+	}
+
+	@Override
+	public void setCreatedDate(Date createdDate) {
+		this.createdDate = createdDate;
+	}
 
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "category_id")
@@ -63,8 +78,6 @@ public class Product extends BaseEntity {
 		_productImages.setProduct(null);
 		productImages.remove(_productImages);
 	}
-	
-	
 
 
 	public String getTitle() {

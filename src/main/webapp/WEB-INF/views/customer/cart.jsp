@@ -95,7 +95,7 @@
 						<p id="required"></p>
 					</div>
 					<div class="form">
-						<button type="submit" class="btn-create">Check out</button>
+						<button type="submit" class="btn-create">Xác nhận mua hàng</button>
 					</div>
 				</form>
 			</div>

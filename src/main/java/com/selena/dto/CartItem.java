@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 /**
  * Biểu thị cho 1 sản phẩm trong giỏ hàng.
- * @author daing
+ * @author dtngx
  *
  */
 public class CartItem {

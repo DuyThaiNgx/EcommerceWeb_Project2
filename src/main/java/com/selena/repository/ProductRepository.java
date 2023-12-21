@@ -14,6 +14,7 @@ import org.springframework.stereotype.Repository;
 import com.selena.model.Product;
 
 @Repository
+// JPA với Inter là kiểu dữ liệu của khóa chính Product
 public interface ProductRepository extends JpaRepository<Product, Integer>{
 	
 	@Query("SELECT p FROM Product p WHERE p.title LIKE CONCAT('%', :name, '%')")

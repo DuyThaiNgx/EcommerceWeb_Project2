@@ -20,15 +20,22 @@ import javax.servlet.http.HttpSession;
 public abstract class BaseController {
 	@Autowired
 	private CategoriesService categoriesService;
-	
+	/*
+	Hiển thị ra toàn bộ category
+	 */
 	@ModelAttribute("categories")
 	public List<Categories> getAllCategories() {
 		return categoriesService.findAll();
 	}
+	/*
+	 Cung cấp thông tin về người dùng đã đăng nhập
+	 */
 	@ModelAttribute("userLogined")
 	public User getUserLogined() {
+		// Lấy thông tin người dùng đã được xác thực với spring security
 		Object userLogined=SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		if(userLogined != null && userLogined instanceof UserDetails) {
+			// Kiểm tra object userLogined là 1 kiểu đối tượng UserDetails thì ép kiểu về User
 			return (User) userLogined;
 		}
 		return new User();

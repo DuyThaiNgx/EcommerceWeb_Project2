@@ -25,24 +25,24 @@
 			<div class="footer-item">
 				<h3>Liên kết</h3>
 				<ul class="menu-link">
-					<li><a href="">Sản phẩm</a></li>
-					<li><a href="">Tìm kiếm</a></li>
-					<li><a href="">Giới thiệu</a></li>
-					<li><a href="">Liên hệ</a></li>
-					<li><a href="">Tin tức</a></li>
+					<li><a href="/product">Sản phẩm</a></li>
+					<li><a href="/admin/bill/search">Tìm kiếm</a></li>
+					<li><a href="/home">Giới thiệu</a></li>
+					<li><a href="https://www.facebook.com/dthai.nevershuy/">Liên hệ</a></li>
+					<li><a href="/login">Đăng nhập</a></li>
 				</ul>
 			</div>
 			<div class="footer-item">
 				<div class="contact">
 					<h3>Thông tin liên hệ</h3>
 					<p>
-						<i class="fa-solid fa-location-dot"></i>Hà Đông Hà Nội
+						<i class="fa-solid fa-location-dot"></i> Hà Đông, Hà Nội
 					</p>
 					<p>
-						<i class="fa-solid fa-phone"></i>0326901096
+						<i class="fa-solid fa-phone"></i> 0988423902
 					</p>
 					<p>
-						<i class="fa-solid fa-fax"></i>0326901096
+						<i class="fa-solid fa-fax"></i> 0988423902
 					</p>
 				</div>
 			</div>

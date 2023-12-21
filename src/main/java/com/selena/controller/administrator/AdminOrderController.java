@@ -34,7 +34,9 @@ public class AdminOrderController extends BaseController {
 
 	@Autowired
 	private OrderRepository orderRepository;
-
+	/*
+	Hiển thị danh sách order
+	 */
 	@RequestMapping(value = ("/admin/order"), method = RequestMethod.GET)
 	public String getOrder(final Model model, final HttpServletRequest request, final HttpServletResponse response,
 			@RequestParam("p") Optional<Integer> p) throws IOException {
