@@ -89,7 +89,7 @@ public class AdminBillController extends BaseController{
 			// Thêm dữ liệu chi tiết hóa đơn vào model
 			List<SaleOrderProducts> saleOrderProducts = saleOrderProductRepository.findBySaleOrder(saleOrderService.findById(id));
 			model.addAttribute("orderDetail", saleOrderProducts);
-
+			// Trả về giao diện hóa đơn
 			return "administrator/bill";
 		} else {
 			// Redirect to an error page or display an error message
