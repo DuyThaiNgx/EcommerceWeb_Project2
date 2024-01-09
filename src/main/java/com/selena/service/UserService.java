@@ -20,6 +20,8 @@ public class UserService extends BaseService<User> {
 	public User loadUserByUsername(String userName) {
 		return userRepository.getUserByUsername(userName);
 	}
-	
+	public boolean existsByUsername(String username) {
+		return userRepository.existsByUsername(username);
+	}
 	
 }

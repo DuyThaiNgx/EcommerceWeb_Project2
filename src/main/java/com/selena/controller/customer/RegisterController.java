@@ -45,8 +45,19 @@ public class RegisterController extends BaseController{
 		String password = request.getParameter("password");
 		String email = request.getParameter("email");
 		String phone = request.getParameter("phone");
+
+		// Check xem TK mới có trùng username hay không
+//		if (userService.existsByUsername(username)) {
+//			model.addAttribute("error", "Tên đăng nhập đã tồn tại");
+//			return "forward:/register";
+//		}
+		if (userService.existsByUsername(username)) {
+			// Thêm tham số login_error vào URL để thông báo lỗi
+			return "redirect:/register?register_error=true";
+		}
+
+
 		User user = new User();
-		
 		
 		Role role=roleRepository.findByName("GUEST");
 		user.setUsername(username);

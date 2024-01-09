@@ -71,7 +71,7 @@
 					<h2 class="desc-product-name">${productTitle}</h2>
 					<fmt:setLocale value="vi_VN" />
 					<p class="desc-product-price">
-						<fmt:formatNumber value="${productPrice}" type="currency"></fmt:formatNumber>
+						<fmt:formatNumber value="${productPrice}" type="currency" currencySymbol="đ"></fmt:formatNumber>
 					</p>
 					<div class="quanlity">
 						<button type="button" data-type="tru" class="btn-tru"

@@ -95,7 +95,7 @@
 							src="${base}/upload/${products.avatar}" alt=""></a>
 						<p>${products.title}</p>
 						<fmt:setLocale value="vi_VN"/>
-						<p class="price"><fmt:formatNumber value="${products.price}" type="currency"></fmt:formatNumber> </p>
+						<p class="price"><fmt:formatNumber value="${products.price}" type="currency" currencySymbol="đ"></fmt:formatNumber> </p>
 						<a class="btn btn-outline-dark mt-auto" href="#"
 							onclick="AddProductToCart('${base}', ${products.id }, 1)" style="margin-left: 35%; margin-bottom: 50px"> Add
 							to cart </a>

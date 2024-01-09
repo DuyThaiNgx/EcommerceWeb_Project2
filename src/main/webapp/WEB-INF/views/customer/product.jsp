@@ -71,7 +71,7 @@
 							<p>${products.title}</p>
 							<fmt:setLocale value="vi_VN" />
 							<p class="price">
-								<fmt:formatNumber value="${products.price}" type="currency"></fmt:formatNumber>
+								<fmt:formatNumber value="${products.price}" type="currency" currencySymbol="đ"></fmt:formatNumber>
 								
 							</p>
 						</div>
