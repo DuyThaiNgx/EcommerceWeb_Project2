@@ -10,7 +10,8 @@ import com.selena.model.User;
 @Repository
 public interface UserRepository extends JpaRepository<User, Integer>{
     boolean existsByUsername(String username);
-
+    User findByUsername(String username);
     @Query("SELECT u FROM User u WHERE u.username = :username")
     public User getUserByUsername(@Param("username") String username);
+
 }

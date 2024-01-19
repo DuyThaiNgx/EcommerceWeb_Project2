@@ -55,8 +55,6 @@ public class RegisterController extends BaseController{
 			// Thêm tham số login_error vào URL để thông báo lỗi
 			return "redirect:/register?register_error=true";
 		}
-
-
 		User user = new User();
 		
 		Role role=roleRepository.findByName("GUEST");

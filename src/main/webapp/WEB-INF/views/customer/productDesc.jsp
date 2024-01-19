@@ -40,7 +40,7 @@
 				<li>${productTitle}</li>
 			</ul>
 		</div>
-		<div class="container main-container">
+		<div class="container main-contaichs	ner">
 			<div class="main-left">
 				<div id="carouselExampleIndicators" class="carousel slide"
 					data-interval="4000" data-ride="carousel">

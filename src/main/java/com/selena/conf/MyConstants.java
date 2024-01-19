@@ -7,5 +7,4 @@ public class MyConstants {
     // Replace password!!
     public static final String MY_PASSWORD = "wgojjrklsppphmyo";
 
-
 }

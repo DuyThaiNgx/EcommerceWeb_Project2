@@ -51,18 +51,16 @@
                             class="align-middle">Dashboard</span>
                     </a>
                 </li>
-
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="${base}/admin/change-password">
+                        <i class="align-middle" data-feather="lock"></i> <span class="align-middle">Change Password</span>
+                    </a>
+                </li>
                 <li class="sidebar-item">
                     <a class="sidebar-link" href="${base}/admin/profile">
                         <i class="align-middle" data-feather="user"></i> <span class="align-middle">Profile</span>
                     </a>
                 </li>
-
-                <li class="sidebar-item"><a class="sidebar-link"
-                                            href="${base}/logout"> <i class="align-middle"
-                                                                      data-feather="log-in"></i> <span class="align-middle">logout
-								</span>
-                </a></li>
 
                 <li class="sidebar-item">
                     <a class="sidebar-link" href="${base}/admin/product">
@@ -77,9 +75,12 @@
                     </a>
                 </li>
 
-                <li class="sidebar-item"><a class="sidebar-link"
-                                            href="${base}/admin/order"> <i class="align-middle" data-feather="map"></i> <span
-                        class="align-middle">Order</span>
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="${base}/admin/order">
+                    <i class="align-middle" data-feather="map"></i><span class="align-middle">Order</span>
+                </a></li>
+                <li class="sidebar-item"><a class="sidebar-link" href="${base}/logout"> <i class="align-middle" data-feather="log-in"></i>
+                    <span class="align-middle">Logout </span>
                 </a></li>
             </ul>
         </div>
@@ -155,8 +156,6 @@
 
                     </div>
                 </sf:form>
-
-
             </div>
         </main>
     </div>
