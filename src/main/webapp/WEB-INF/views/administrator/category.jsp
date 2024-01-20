@@ -53,18 +53,19 @@
                 </li>
                 <li class="sidebar-item">
                     <a class="sidebar-link" href="${base}/admin/change-password">
-                        <i class="align-middle" data-feather="lock"></i> <span class="align-middle">Change Password</span>
+                        <i class="align-middle" data-feather="lock"></i> <span
+                            class="align-middle">Đổi mật khẩu</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
                     <a class="sidebar-link" href="${base}/admin/profile">
-                        <i class="align-middle" data-feather="user"></i> <span class="align-middle">Profile</span>
+                        <i class="align-middle" data-feather="user"></i> <span class="align-middle">Thông tin cá nhân</span>
                     </a>
                 </li>
 
                 <li class="sidebar-item">
                     <a class="sidebar-link" href="${base}/admin/product">
-                        <i class="align-middle" data-feather="inbox"></i> <span class="align-middle"> Product</span>
+                        <i class="align-middle" data-feather="inbox"></i> <span class="align-middle">Sản phẩm</span>
                     </a>
                 </li>
 
@@ -77,10 +78,11 @@
 
                 <li class="sidebar-item">
                     <a class="sidebar-link" href="${base}/admin/order">
-                    <i class="align-middle" data-feather="map"></i><span class="align-middle">Order</span>
-                </a></li>
-                <li class="sidebar-item"><a class="sidebar-link" href="${base}/logout"> <i class="align-middle" data-feather="log-in"></i>
-                    <span class="align-middle">Logout </span>
+                        <i class="align-middle" data-feather="map"></i><span class="align-middle">Đơn hàng</span>
+                    </a></li>
+                <li class="sidebar-item"><a class="sidebar-link" href="${base}/logout"> <i class="align-middle"
+                                                                                           data-feather="log-in"></i>
+                    <span class="align-middle">Đăng xuất </span>
                 </a></li>
             </ul>
         </div>
@@ -127,9 +129,9 @@
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#"><i
                                     class="align-middle me-1" data-feather="settings"></i> Settings
-                            & Privacy</a> <a class="dropdown-item" href="#"><i
+                                & Privacy</a> <a class="dropdown-item" href="#"><i
                                 class="align-middle me-1" data-feather="help-circle"></i> Help
-                        Center</a>
+                            Center</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="${base}/logout">Log out (${userLogined.email})</a>
                         </div>
@@ -147,10 +149,10 @@
                         <sf:input path="name" class="name-product" type="text"
                                   placeholder="Nhập tên danh mục mới"></sf:input>
                     </div>
-                  <div class="form">
-                    <label class="form-label">Mô tả sản phảm</label>
-                    <sf:textarea path="description" class="desc-product" name="" id=""></sf:textarea>
-                  </div>
+                    <div class="form">
+                        <label class="form-label">Mô tả sản phảm</label>
+                        <sf:textarea path="description" class="desc-product" name="" id=""></sf:textarea>
+                    </div>
                     <div class="btn-confirm">
                         <button type="submit">Xác nhận</button>
 

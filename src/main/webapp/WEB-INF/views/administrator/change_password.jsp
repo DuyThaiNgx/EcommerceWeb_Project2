@@ -64,17 +64,17 @@
                 <li class="sidebar-item active">
                     <a class="sidebar-link" href="${base}/admin/change-password">
                         <i class="align-middle" data-feather="lock"></i> <span
-                            class="align-middle">Change Password</span>
+                            class="align-middle">Đổi mật khẩu</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
                     <a class="sidebar-link" href="${base}/admin/profile">
-                        <i class="align-middle" data-feather="user"></i> <span class="align-middle">Profile</span>
+                        <i class="align-middle" data-feather="user"></i> <span class="align-middle">Thông tin cá nhân</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
                     <a class="sidebar-link" href="${base}/admin/product">
-                        <i class="align-middle" data-feather="inbox"></i> <span class="align-middle"> Product</span>
+                        <i class="align-middle" data-feather="inbox"></i> <span class="align-middle"> Sản phẩm</span>
                     </a>
                 </li>
 
@@ -88,11 +88,11 @@
                 <li class="sidebar-item"><a class="sidebar-link"
                                             href="${base}/admin/order"> <i class="align-middle" data-feather="map"></i>
                     <span
-                            class="align-middle">Order</span>
+                            class="align-middle">Đơn hàng</span>
                 </a></li>
                 <li class="sidebar-item"><a class="sidebar-link" href="${base}/logout"> <i class="align-middle"
                                                                                            data-feather="log-in"></i>
-                    <span class="align-middle">Logout </span>
+                    <span class="align-middle">Đăng xuất </span>
                 </a></li>
             </ul>
         </div>
@@ -201,7 +201,7 @@
         <%--                </form>--%>
         <%--            </main>--%>
         <main class="content">
-            <h2>Change Password</h2>
+            <h2>Đổi mật khẩu</h2>
             <c:if test="${not empty param.changepw_error}">
                 <div class="error-password" role="alert">
                     <i class="bi bi-exclamation-triangle-fill"></i>
@@ -223,7 +223,7 @@
 
             <form action="${base}/admin/change-password" method="post">
                 <div class="form-group">
-                    <label for="currentPassword">Current Password:</label>
+                    <label for="currentPassword">Mật khẩu cũ:</label>
                     <input type="password" id="currentPassword" name="currentPassword" required>
                     <c:if test="${bindingResult.hasFieldErrors('currentPassword')}">
                         <div class="error-message" role="alert">
@@ -232,12 +232,12 @@
                     </c:if>
                 </div>
                 <div class="form-group">
-                    <label for="newPassword">New Password:</label>
+                    <label for="newPassword">Mật khẩu mới:</label>
                     <input type="password" id="newPassword" name="newPassword" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="confirmPassword">Confirm Password:</label>
+                    <label for="confirmPassword">Xác nhận mật khẩu mới:</label>
                     <input type="password" id="confirmPassword" name="confirmPassword" required>
                     <c:if test="${bindingResult.hasFieldErrors('confirmPassword')}">
                         <div class="error-message" role="alert">
@@ -245,7 +245,7 @@
                         </div>
                     </c:if>
                 </div>
-                <button type="submit">Change Password</button>
+                <button type="submit">Đổi mật khẩu</button>
             </form>
         </main>
     </div>

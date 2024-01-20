@@ -55,17 +55,17 @@
 					</li>
 					<li class="sidebar-item">
 						<a class="sidebar-link" href="${base}/admin/change-password">
-							<i class="align-middle" data-feather="lock"></i> <span class="align-middle">Change Password</span>
+							<i class="align-middle" data-feather="lock"></i> <span class="align-middle">Đổi mật khẩu</span>
 						</a>
 					</li>
 					<li class="sidebar-item">
 						<a class="sidebar-link" href="${base}/admin/profile">
-							<i class="align-middle" data-feather="user"></i> <span class="align-middle">Profile</span>
+							<i class="align-middle" data-feather="user"></i> <span class="align-middle">Thông tin cá nhân</span>
 						</a>
 					</li>
 					<li class="sidebar-item active">
 						<a class="sidebar-link" href="${base}/admin/product">
-							<i class="align-middle" data-feather="inbox"></i> <span class="align-middle"> Product</span>
+							<i class="align-middle" data-feather="inbox"></i> <span class="align-middle">Sản phẩm</span>
 						</a>
 					</li>
 
@@ -78,10 +78,10 @@
 
 					<li class="sidebar-item"><a class="sidebar-link"
 												href="${base}/admin/order"> <i class="align-middle" data-feather="map"></i> <span
-							class="align-middle">Order</span>
+							class="align-middle">Đơn hàng</span>
 					</a></li>
 					<li class="sidebar-item"><a class="sidebar-link" href="${base}/logout">
-						<i class="align-middle" data-feather="log-in"></i> <span class="align-middle">Logout</span>
+						<i class="align-middle" data-feather="log-in"></i> <span class="align-middle">Đăng xuất</span>
 					</a></li>
 				</ul>
 			</div>

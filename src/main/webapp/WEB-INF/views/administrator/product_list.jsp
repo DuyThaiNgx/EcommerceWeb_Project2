@@ -5,6 +5,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <!-- import thư viện spring-form -->
+<%-- Hiển thị danh mục sản phẩm ngay khi ấn vào dashboard--%>
 <%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -53,17 +54,17 @@
                 </li>
                 <li class="sidebar-item">
                     <a class="sidebar-link" href="${base}/admin/change-password">
-                        <i class="align-middle" data-feather="lock"></i> <span class="align-middle">Change Password</span>
+                        <i class="align-middle" data-feather="lock"></i> <span class="align-middle">Đổi mật khẩu</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
                     <a class="sidebar-link" href="${base}/admin/profile">
-                        <i class="align-middle" data-feather="user"></i> <span class="align-middle">Profile</span>
+                        <i class="align-middle" data-feather="user"></i> <span class="align-middle">Thông tin cá nhân</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
                     <a class="sidebar-link" href="${base}/admin/product">
-                        <i class="align-middle" data-feather="inbox"></i> <span class="align-middle"> Product</span>
+                        <i class="align-middle" data-feather="inbox"></i> <span class="align-middle">Sản phẩm</span>
                     </a>
                 </li>
 
@@ -75,10 +76,10 @@
                 </li>
 
                 <li class="sidebar-item"><a class="sidebar-link" href="${base}/admin/order"> <i class="align-middle" data-feather="map"></i>
-                    <span class="align-middle">Order</span>
+                    <span class="align-middle">Đơn hàng</span>
                 </a></li>
                 <li class="sidebar-item"><a class="sidebar-link" href="${base}/logout"> <i class="align-middle" data-feather="log-in"></i>
-                    <span class="align-middle">Logout </span>
+                    <span class="align-middle">Đăng xuất </span>
                 </a></li>
             </ul>
         </div>
@@ -118,7 +119,7 @@
                             class="text-dark"></span>
                     </a>
                         <div class="dropdown-menu dropdown-menu-end">
-                            <a class="dropdown-item" href="pages-profile.html"><i
+                            <a class="dropdown-item" href="${base}/admin/profile"><i
                                     class="align-middle me-1" data-feather="user"></i> Profile</a> <a
                                 class="dropdown-item" href="#"><i class="align-middle me-1"
                                                                   data-feather="pie-chart"></i> Analytics</a>
@@ -171,7 +172,7 @@
                         </div>
                         <div>
                             <a class="btn btn-outline-primary mb-1"
-                               href="${base }/admin/product/" role="button"> Add New </a>
+                               href="${base }/admin/product/" role="button"> Thêm sản phẩm </a>
                         </div>
                     </div>
                 </form>
@@ -179,12 +180,12 @@
                     <thead>
                     <tr>
                         <th scope="col">STT</th>
-                        <th scope="col">Title</th>
-                        <th scope="col">Price</th>
+                        <th scope="col">Tên sản phẩm</th>
+                        <th scope="col">Giá</th>
                         <th scope="col">Category</th>
                         <th scope="col">Xóa/Chưa Xóa</th>
                         <th scope="col">Avatar</th>
-                        <th scope="col">Action</th>
+                        <th scope="col">Thao tác</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -215,9 +216,9 @@
                                 <form action="${base}/delete" method="post">
                                     <div>
                                         <a class="btn btn-primary"
-                                           href="${base }/admin/product/${product.id}" role="button">Edit</a>
+                                           href="${base }/admin/product/${product.id}" role="button">Thêm</a>
                                         <a class="btn btn-danger" role="button"
-                                           href="${base }/delete/${product.id}">Delete</a>
+                                           href="${base }/delete/${product.id}">Xóa</a>
                                     </div>
                                 </form>
                             </td>
