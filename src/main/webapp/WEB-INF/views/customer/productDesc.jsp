@@ -40,7 +40,7 @@
 				<li>${productTitle}</li>
 			</ul>
 		</div>
-		<div class="container main-contaichs	ner">
+		<div class="container main-container">
 			<div class="main-left">
 				<div id="carouselExampleIndicators" class="carousel slide"
 					data-interval="4000" data-ride="carousel">
@@ -81,8 +81,7 @@
 						<button type="button" data-type="cong" class="btn-cong"
 							style="border: none; padding: 5px 10px;">+</button>
 						<a class="btn-add"
-							onclick="AddProductToCart('${base}', ${productId})"> Add
-							to cart </a>
+							onclick="AddProductToCart('${base}', ${productId})"> Thêm vào giỏ hàng </a>
 					</div>
 
 				</div>
