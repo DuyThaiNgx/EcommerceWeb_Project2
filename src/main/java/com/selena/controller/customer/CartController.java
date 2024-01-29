@@ -99,8 +99,8 @@ public class CartController extends BaseController {
 		SimpleMailMessage message = new SimpleMailMessage();
 
 		message.setTo(saleOrder.getCustomerEmail());
-		message.setSubject("Cảm Ơn");
-		message.setText("Hello " + saleOrder.getCustomerName()
+		message.setSubject("Xác nhận đặt hàng");
+		message.setText("Xin chào " + saleOrder.getCustomerName()
 				+ ", Selena cảm ơn bạn đã mua hàng và mong rằng bạn sẽ luôn luôn ủng hộ các sản phẩm của chúng tôi.");
 
 		// Send Message!
