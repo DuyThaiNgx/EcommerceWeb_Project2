@@ -82,6 +82,7 @@ public class AdminChangePasswordController extends BaseController {
         } else {
 //            bindingResult.rejectValue("currentPassword", "error.user", "Incorrect current password.");
             redirectAttributes.addFlashAttribute("changepw_error", "true");
+            //Mật khẩu cũ không đúng
             return "redirect:/admin/change-password?changepw_error=true";
         }
 //        return "administrator/change_password";

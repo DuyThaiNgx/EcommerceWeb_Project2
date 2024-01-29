@@ -34,7 +34,7 @@
 
 	<main>
 		<div class="menu-header">
-			<ul class="container   breadcrumd">
+			<ul class="container breadcrumd">
 				<li><a href="">Trang chủ</a></li>
 				<li>Sản phẩm nổi bật</li>
 				<li>${productTitle}</li>
@@ -99,6 +99,7 @@
 					<!--start-->
 					<c:forEach items="${products}" var="products">
 						<div class="product-item">
+							<%-- "${products}": Thympleaf đặt tên biến, products được truyền từ controller đến view template --%>
 							<a href="${base}/product/${products.id}"><img
 								src="${base}/upload/${products.avatar}" alt=""></a>
 							<p>${products.title}</p>
