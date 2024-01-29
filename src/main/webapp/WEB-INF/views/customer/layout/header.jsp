@@ -60,7 +60,7 @@
 				</c:forEach>
 			</div>
 		</li>
-		<li><a href="">Liên hệ</a></li>
+		<li><a href="${base}/contact">Liên hệ</a></li>
 	</ul>
 </nav>
 

@@ -95,7 +95,7 @@ public class ProductService extends BaseService<Product> {
 			product.setAvatar("product/avatar/" + fileName);
 		}
 
-		// có đẩy pictures(product_images) ???
+		// có đẩy pictures(product_images) ??? (CHƯA HOÀN THIỆN)
 		if (!isEmptyUploadFile(productPictures)) { // có đẩy pictures lên.
 
 			// nếu admin đẩy lên thì duyệt tất cả file đẩy lên và lưu trên server
@@ -113,8 +113,6 @@ public class ProductService extends BaseService<Product> {
 				product.addProductImages(productImages);
 			}
 		}
-
-		
 
 		// lưu vào database
 		return super.saveOrUpdate(product);

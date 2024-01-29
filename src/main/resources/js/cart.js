@@ -1,4 +1,23 @@
 
+// Update giá của từng sản phẩm khi vào giỏ hàng
+$(document).ready(function() {
+	// Tính toán và cập nhật giá của từng sản phẩm khi trang đã sẵn sàng
+	updateTotalPrices();
+});
+function updateTotalPrices() {
+	$('.row').each(function() {
+		let parent = $(this);
+		let input_slg = parent.find('.input_slg');
+		let slg = parseInt(input_slg.val());
+		let price = parseFloat(input_slg.attr('data-price'));
+		let total_sp = slg * price;
+		parent.find('.total').text(formatPrice(total_sp));
+	});
+
+	// Tính tổng giá của tất cả sản phẩm và cập nhật tổng giá
+	let total = totalPrice();
+	$('#total-price').text(formatPrice(total) + "VNĐ");
+}
 
 $('.btn-cong, .btn-tru').on('click', function() {
 	//$ thisđối tương html đang tác động

@@ -30,10 +30,8 @@
 
 <body>
 
-
 	<jsp:include page="/WEB-INF/views/customer/layout/header.jsp"></jsp:include>
-
-
+	<%--	Phần slide chuyển ảnh ở header, sử dụng bootstrap	--%>
 	<div id="carouselExampleIndicators" class="carousel slide"
 		data-interval="4000" data-ride="carousel">
 		<ol class="carousel-indicators">
@@ -123,14 +121,15 @@
 	</div>
 	<div class="main-bottom">
 		<div class="container banner-main">
-			<h1 class="banner-desc">Kem khoáng Deadsea</h1>
+			<h1 class="banner-desc">Mỹ phẩm chính hãng</h1>
 			<p>
-				Kem khoáng Deadsea Multi-Vitamin kem SPF-20 khoáng chất (Sức <br>
-				khỏe & Làm đẹp) bao gồm một phức hợp các vitamin C và kết hợp với <br>
-				dầu hoa anh thảo, cây hắc mai biển, trà xanh, lô hội, cũng như các
-				bộ <br> lọc tia UVA và UVB.
+				SELENA tự hào cung cấp những sản phẩm làm đẹp chất lượng, đáng tin cậy <br> từ các thương hiệu danh tiếng trên thế giới.
+				Bạn sẽ khám phá một thế giới đa dạng <br> với những sản phẩm chất lượng từ các thương hiệu uy tín trên khắp thế giới.
+				<br> Chúng tôi cam kết đem đến cho bạn trải nghiệm làm đẹp an toàn, hiệu quả và đầy <br> tin cậy.
+				Hãy để chúng tôi giúp bạn tự tin hơn trong vẻ đẹp của mình!
 			</p>
-			<button class="btn-slider">Mua ngay</button>
+<%--			<button class="btn-slider" href="${base}/product">Mua ngay</button>--%>
+			<a class="btn-slider" href="${base}/product">Mua ngay</a>
 		</div>
 	</div>
 	<div class="container main-container">
@@ -163,7 +162,6 @@
 
 
 	<jsp:include page="/WEB-INF/views/customer/layout/footer.jsp"></jsp:include>
-
 
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
 		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"

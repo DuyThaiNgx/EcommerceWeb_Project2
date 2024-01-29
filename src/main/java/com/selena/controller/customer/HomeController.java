@@ -33,7 +33,7 @@ public class HomeController extends BaseController {
 	private ProductService productService;
 
 	
-	
+	// Ấn vào số trang để hiển thị sản phẩm
 	@RequestMapping(value={"/home"}, method = RequestMethod.GET)
 	public String pagination(final Model model,
 			final HttpServletRequest request,

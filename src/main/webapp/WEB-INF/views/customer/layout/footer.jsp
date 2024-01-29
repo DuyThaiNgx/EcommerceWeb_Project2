@@ -26,7 +26,8 @@
 				<h3>Liên kết</h3>
 				<ul class="menu-link">
 					<li><a href="/product">Sản phẩm</a></li>
-					<li><a href="/admin/bill/search">Tìm kiếm</a></li>
+<%--					<li><a href="/admin/bill/search">Tìm kiếm</a></li>--%>
+					<li><a href="#" id="scrollToTop">Tìm kiếm</a></li>
 					<li><a href="/home">Giới thiệu</a></li>
 					<li><a href="https://www.facebook.com/dthai.nevershuy/">Liên hệ</a></li>
 					<li><a href="/login">Đăng nhập</a></li>
@@ -48,4 +49,12 @@
 			</div>
 		</div>
 	</div>
+	<script>
+		document.getElementById('scrollToTop').addEventListener('click', function(event) {
+			// Ngăn chặn hành động mặc định của thẻ a
+			event.preventDefault();
+			// Cuộn lên đầu trang
+			window.scrollTo({ top: 0, behavior: 'smooth' });
+		});
+	</script>
 </footer>

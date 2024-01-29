@@ -10,7 +10,7 @@ import javax.persistence.MappedSuperclass;
 
 @MappedSuperclass
 public abstract class BaseEntity {
-
+	//Các Model có chung các thuộc tính của BaseEntity
 	@Id // khóa chính
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // auto increment
 	@Column(name = "id") // tên colunm mapping với property này
