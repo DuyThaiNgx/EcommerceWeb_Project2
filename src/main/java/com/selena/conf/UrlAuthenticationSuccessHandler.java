@@ -56,16 +56,20 @@ public class UrlAuthenticationSuccessHandler implements AuthenticationSuccessHan
 
 		final Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();
 		for (final GrantedAuthority grantedAuthority : authorities) {
+			//Lấy tên của quyền.
 			String authorityName = grantedAuthority.getAuthority();
+			//Kiểm tra danh sách xem có tên quyền không
 			if (roleTargetUrlMap.containsKey(authorityName)) {
 				return roleTargetUrlMap.get(authorityName);
 			}
 		}
+		// Nếu không tìm thấy URL mục tiêu nào cho quyền, ném một ngoại lệ IllegalStateException.
 		throw new IllegalStateException();
 	}
-
+	// Xóa session sau khi hoàn thành quá trình xác thực
 	protected void clearAuthenticationAttributes(HttpServletRequest request) {
 		HttpSession session = request.getSession(false);
+		//Kiểm tra xem session có tồn tại không. Nếu không tồn tại (null), phương thức sẽ kết thúc mà không làm gì cả.
 		if (session == null) {
 			return;
 		}

@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
@@ -39,7 +40,9 @@ public class HomeController extends BaseController {
 			final HttpServletRequest request,
 			final HttpServletResponse response,
 			@RequestParam("p") Optional<Integer> p) throws IOException {
-		Pageable pageable =PageRequest.of(p.orElse(0), 8);
+		// Hiển thị sản phẩm theo số id, sản phẩm mới thêm được cho lên đầu
+		Sort sort = Sort.by("id").descending();
+		Pageable pageable =PageRequest.of(p.orElse(0), 8, sort);
 		Page<Product> page=productService.findAll(pageable);
 		List<Product> product=page.getContent();
 		model.addAttribute("product", product);
@@ -48,7 +51,7 @@ public class HomeController extends BaseController {
 		
 		return "customer/home";
 	}
-	
+	// Tìm kiếm sản phẩn ở ô input text
 	@RequestMapping(value={"/home"}, method = RequestMethod.POST)
 	public String searchProduct(final Model model,
 			final HttpServletRequest request,

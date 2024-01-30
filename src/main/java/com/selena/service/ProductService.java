@@ -91,7 +91,6 @@ public class ProductService extends BaseService<Product> {
 
 			// lưu avatar vào đường dẫn trên
 			productAvatar.transferTo(new File(pathToAvatar));
-
 			product.setAvatar("product/avatar/" + fileName);
 		}
 

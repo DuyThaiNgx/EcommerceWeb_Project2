@@ -70,7 +70,7 @@ public class CartController extends BaseController {
 		saleOrder.setCustomerEmail(customerEmail);
 		saleOrder.setCustomerAddress(customerAddress);
 		saleOrder.setCustomerPhone(customerPhone);
-		saleOrder.setCode(String.valueOf(System.currentTimeMillis())); // mã hóa đơn
+		saleOrder.setCode(String.valueOf(System.currentTimeMillis())); // mã hóa thời điểm mua hàng đổi sang milliseconds
 		saleOrder.setStatus("Đang giao hàng");
 		
 		// lấy giỏ hàng
@@ -88,7 +88,7 @@ public class CartController extends BaseController {
 			saleOrder.addSaleOrderProducts(saleOrderProducts);
 		}
 
-		// lưu vào database
+		// lưu đơn hàng vào database
 		saleOrderService.saveOrUpdate(saleOrder);
 
 		// thực hiện reset lại giỏ hàng của Session hiện tại
@@ -148,6 +148,7 @@ public class CartController extends BaseController {
 			// trước khi thêm mới thì lấy sản phẩm trong db
 			// và thiết lập tên + đơn giá cho cartitem
 			Product productInDb = productService.getById(cartItem.getProductId());
+			// tạo ra sản phẩm dựa trên các thuộc tính model product
 			cartItem.setProductName(productInDb.getTitle());
 			cartItem.setPriceUnit(productInDb.getPrice());
 			cartItem.setProductAvatar(productInDb.getAvatar());

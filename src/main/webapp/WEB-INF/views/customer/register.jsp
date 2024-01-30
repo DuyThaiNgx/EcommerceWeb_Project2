@@ -53,6 +53,7 @@
                     <input type="text" name="username" class="form-control" placeholder="*User Name">
                     <p id="required"></p>
                 </div>
+                <%--   Kiểu type = password sẽ hiển thị string dưới dạng dấu chấm   --%>
                 <div class="form">
                     <input type="password" name="password" class="form-control" placeholder="*Password">
                     <p id="required"></p>

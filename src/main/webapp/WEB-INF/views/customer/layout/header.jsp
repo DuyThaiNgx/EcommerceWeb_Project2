@@ -16,6 +16,7 @@
 		</div>
 		<div class="header-right">
 			<div class="icon" style="display: flex;align-items: center;">
+				<%-- Search tên sản phẩm --%>
 				<form action="${base}/home" method="POST" style="margin-right: 30px; display: flex; height: 40px">
 					<input type="text" id="keyword" name="name" class="form-control"
 						placeholder="..." autocomplete="off" style="margin-right: 10px;"> 
